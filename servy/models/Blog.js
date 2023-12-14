@@ -18,8 +18,7 @@ const personSchema = new mongoose.Schema(
     },
     author: {
       type: String,
-      required: [true, 'Must provide a name'],
-      trim: true
+      required: [true, 'Must provide a name']
     },
     description: {
       type: String,
