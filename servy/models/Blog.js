@@ -2,26 +2,30 @@ const mongoose = require('mongoose');
 
 const personSchema = new mongoose.Schema(
   {
-    userId: {
+    blogId: {
       type: Number,
       required: true,
     },
-    name: {
+    title: {
       type: String,
       required: [true, 'Must provide a name'],
       trim: true,
       maxLength: [20, 'The name can not exceed 20 chars'],
     },
-    age: {
+    author: {
       type: Number,
       required: true,
     },
-    assigned: {
+    description: {
       type: String,
-      default: 'None',
+      required: true,
+    },
+    comments: {
+      type: Array,
+      default: [],
     },
   },
-  { collection: 'people' }
+  { collection: 'Blogs' }
 );
 
 module.exports = mongoose.model('Blog', personSchema);

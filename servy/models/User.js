@@ -6,22 +6,26 @@ const personSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    name: {
+    username: {
       type: String,
       required: [true, 'Must provide a name'],
       trim: true,
       maxLength: [20, 'The name can not exceed 20 chars'],
     },
-    age: {
-      type: Number,
+    email: {
+      type: String,
       required: true,
     },
-    assigned: {
+    password: {
       type: String,
-      default: 'None',
+      required: true,
+    },
+    blogs: {
+      type: Array,
+      default: [],
     },
   },
-  { collection: 'people' }
+  { collection: 'Users' }
 );
 
 module.exports = mongoose.model('User', personSchema);
