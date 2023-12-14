@@ -17,8 +17,8 @@ const personSchema = new mongoose.Schema(
       maxLength: [20, 'The name can not exceed 20 chars'],
     },
     author: {
-      type: Number,
-      required: true,
+      type: String,
+      required: [true, 'Must provide a name'],
     },
     description: {
       type: String,
