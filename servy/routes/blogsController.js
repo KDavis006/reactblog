@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 const {
-  readUsers,
-  createUsers,
-  updateUsers,
-  deleteUser,
-} = require('../controllers/users');
+  readBlogs,
+  createBlogs,
+  updateBlogs,
+  deleteBlog,
+} = require('../controllers/blogs');
 
-router.get('/', readUsers);
-router.post('/', createUsers);
-router.put('/:id', updateUsers);
-router.delete('/:id', deleteUser);
+router.get('/', readBlogs);
+router.post('/', createBlogs);
+router.put('/:id', updateBlogs);
+router.delete('/:id', deleteBlog);
 
 module.exports = router;

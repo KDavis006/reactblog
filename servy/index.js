@@ -5,6 +5,8 @@ const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
 const usersRoute = require('./routes/usersController');
+const blogsRoute = require('./routes/blogsController');
+
 const connectDB = require('./db/connect');
 
 app.use(morgan('tiny'));
@@ -17,6 +19,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', usersRoute);
+app.use('/blogs', blogsRoute);
+
 const initServer = async () => {
   try {
     await connectDB(process.env.REACT_APP_MONGO);

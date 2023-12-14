@@ -6,6 +6,10 @@ const personSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    image: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: [true, 'Must provide a name'],
@@ -17,6 +21,10 @@ const personSchema = new mongoose.Schema(
       required: true,
     },
     description: {
+      type: String,
+      required: true,
+    },
+    content: {
       type: String,
       required: true,
     },
