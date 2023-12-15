@@ -28,6 +28,11 @@ const personSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    numFavorites: {
+      type: Number,
+      default: 0,
+      required: true
+    },
     comments: {
       type: Array,
       default: [],

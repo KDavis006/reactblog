@@ -1,13 +1,16 @@
 import React from 'react'
+import {ProfileUser} from '../Components/ProfileUser'
 
 const Profile = () => {
   return (
-    <div className="main">
-     <header>
-      <img src={User.image} alt="Profile Image" />
-      <h1>{User.username}</h1>
-     </header>
-    </div>
+    <>
+      <nav className="navbar">
+
+      </nav>
+      <div className="main">
+        <ProfileUser data={user} />
+      </div>
+    </>
   )
 }
 
