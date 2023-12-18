@@ -1,5 +1,5 @@
 import React from 'react'
-import {ProfileUser} from '../Components/ProfileUser'
+import ProfileUser from '../Components/ProfileUser'
 
 const Profile = () => {
   return (
@@ -8,7 +8,7 @@ const Profile = () => {
 
       </nav>
       <div className="main">
-        <ProfileUser data={user} />
+        <ProfileUser data={[]} />
       </div>
     </>
   )
