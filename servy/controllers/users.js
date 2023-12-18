@@ -5,21 +5,27 @@ const readUsers = async (req, res) => {
     res.json(answer);
   } catch (err) {}
 };
-let id = 0;
-const createUsers = async (req, res) => {
-  let answer = await User.find({});
-  if (!answer[0]) {
-    id = 1;
-  } else {
-    id = answer[answer.length - 1].userId + 1;
-  }
-  const { name, age } = req.body;
-  if (!name) {
-    return res.status(404).json({ success: false, data: [] });
-  }
-  let newUser = await User.create({ userId: id, name: name, age: age });
-  res.status(202).json(newUser);
-};
+
+const createUsers = async(req, res) => {
+  alert(64564)
+    try {
+        const {name, email, password} = req.body;
+        let item = await User.findOne({email: email});
+        let allUsers = await User.find({});
+        if(!name || !email || !password){
+            console.log("not all fields are filled out");
+            return res.json({data: [], success: false, msg: "Please fill out all fields"})
+        } else if(item != null) {
+            console.log("a user with that email already exists");
+            return res.json({data: [], success: false, msg: "that email's already taken, try another"})
+        } else {
+            let itemTwo = await User.create({name:name, email:email, id:allUsers.length+1, password:password});
+            res.json({success: true, data: itemTwo});
+        }
+    } catch(err) {
+        console.log(err);
+    }
+}
 
 const updateUsers = async (req, res) => {
   try {

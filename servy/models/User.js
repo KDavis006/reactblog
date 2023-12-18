@@ -1,36 +1,18 @@
 const mongoose = require('mongoose');
 
-const personSchema = new mongoose.Schema(
-  {
-    userId: {
-      type: Number,
-      required: true,
+const personSchema = new mongoose.Schema({
+    name: {
+        type:String,
     },
-    username: {
-      type: String,
-      required: [true, 'Must provide a name'],
-      trim: true,
-      maxLength: [20, 'The name can not exceed 20 chars'],
+    id:{
+        type:Number
     },
-    image: {
-      type: String,
-      required: false,
-      default: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
+    email:{
+        type:String
     },
-    email: {
-      type: String,
-      required: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    blogs: {
-      type: Array,
-      default: [],
-    },
-  },
-  { collection: 'Users' }
-);
+    password:{
+        type:String
+    }
+}, {collection: "Users"})
 
 module.exports = mongoose.model('User', personSchema);
