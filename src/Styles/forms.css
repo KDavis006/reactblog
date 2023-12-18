@@ -1,0 +1,60 @@
+input{
+    border: .1rem white solid;
+    border-radius: 1px;
+    width: 30rem;
+    height: 4rem;
+    padding: .5rem;
+    margin: auto;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+        background-color: #293eff;
+}
+input:focus{
+    border: .1rem white solid;
+    outline: none;
+}
+.signForm{
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+}
+.signForm a{
+    color: #293eff;
+}
+.loginForm a{
+    color: #293eff;
+}
+.loginForm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.submitButton{
+    border: none;
+        border-radius: 1px;
+        width: 15rem;
+        height: 2rem;
+        padding: .5rem;
+        margin: auto;
+        font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+        line-height: .5rem;
+}
+.submitButton:hover{
+    color: white;
+    background-color: #293eff;
+}
