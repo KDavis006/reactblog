@@ -23,10 +23,11 @@ const Login = () => {
    if(email === person.email && password === person.password){
     console.log('work')
     sessionStorage.setItem('authenticated', true);
-    sessionStorage.setItem('currentUser', JSON.stringify(person.id, person.name, person.email));
+    sessionStorage.setItem('currentUser', JSON.stringify([person.id, person.name, person.email]));
     setLogin(true);
     console.log(login)
    }
+   return person
   })
  }
 

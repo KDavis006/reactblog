@@ -5,20 +5,18 @@ const readBlogs = async (req, res) => {
     res.json(answer);
   } catch (err) {}
 };
-let id = 0;
+
+
 const createBlogs = async (req, res) => {
-  let answer = await Blog.find({});
-  if (!answer[0]) {
-    id = 1;
-  } else {
-    id = answer[answer.length - 1].BlogId + 1;
+  try{
+    console.log('Creating');
+    const {title, description, content, image, author} = req.body;
+    let allBlogs = await Blog.find({});
+    let itemTwo = await Blog.create({title: title, description: description, content: content, image: image, author: author, id: allBlogs.length+1});
+    res.json({success: true, data: itemTwo});
+  } catch (err) {
+    console.log(err);
   }
-  const { name, age } = req.body;
-  if (!name) {
-    return res.status(404).json({ success: false, data: [] });
-  }
-  let newBlog = await Blog.create({ BlogId: id, name: name, age: age });
-  res.status(202).json(newBlog);
 };
 
 const updateBlogs = async (req, res) => {

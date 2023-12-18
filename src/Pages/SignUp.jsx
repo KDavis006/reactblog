@@ -21,13 +21,14 @@ const SignUp = () => {
 
  const handleSubmit = () => {
   people.current.map(person => {
-   if(email === person.email) {
+   if(email === person.email || name === person.name) {
     taken.current = true;
    }
+   return person;
   })
 
   if(taken.current === true) {
-   alert('Email is already taken')
+   alert('Email or Username is already taken')
   } else {
    postData()
    sessionStorage.setItem('authenticated', true);
@@ -55,7 +56,6 @@ const SignUp = () => {
     return response.json();
   } catch (err) {
     console.error('There was a problem with the fetch operation:', err);
-    // Handle the error, return a default value, or throw it again if needed.
   }
 }
 
