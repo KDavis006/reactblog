@@ -1,5 +1,5 @@
 input{
-    border: .1rem white solid;
+    border:none;
     border-radius: 1px;
     width: 30rem;
     height: 4rem;
@@ -11,7 +11,7 @@ input{
         background-color: #293eff;
 }
 input:focus{
-    border: .1rem white solid;
+    border: none;
     outline: none;
 }
 .signForm{
