@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomeBlog = ({data}) => {
   const clicky=()=>{
-    sessionStorage.setItem("blogData",data)
+    sessionStorage.setItem("blogData",JSON.stringify(data))
     window.location.href = "/blog"
   }
   return (
