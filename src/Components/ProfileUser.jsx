@@ -1,13 +1,13 @@
 import React from 'react'
 
 const ProfileUser = ({user}) => {
- const {username, image, email, blogs} = user
+ const {name, image, email, blogs} = user
   return (
     <div className="main">
      {/* header area */}
      <header>
       <img src={image} alt="Profile Image" />
-      <h1>{username}</h1>
+      <h1>{name}</h1>
      </header>
      <hr />
 

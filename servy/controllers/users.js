@@ -7,7 +7,6 @@ const readUsers = async (req, res) => {
 };
 
 const createUsers = async(req, res) => {
-  alert(64564)
     try {
         const {name, email, password} = req.body;
         let item = await User.findOne({email: email});

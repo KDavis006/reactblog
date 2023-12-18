@@ -21,6 +21,7 @@ const Login = () => {
   people.current.map(person => {
    console.log(person.email, email, person.password, password)
    if(email === person.email && password === person.password){
+    console.log('work')
     sessionStorage.setItem('authenticated', true);
     sessionStorage.setItem('currentUser', JSON.stringify(person.id, person.name, person.email));
     setLogin(true);
@@ -30,8 +31,8 @@ const Login = () => {
  }
 
  if(login === true){
-   window.location.replace('/home');
-   console.log(login)
+  console.log('e')
+   window.location.href = '/home'
  }
 
  

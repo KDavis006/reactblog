@@ -75,7 +75,7 @@ const SignUp = () => {
       </div>
       <button className='submitButton' onClick={() => handleSubmit()}>Create Account</button>
      </form>
-     <p className='gotIt'>Already have an account? <Link to={'/sign'} className='account'>Sign In</Link></p>
+     <p className='gotIt'>Already have an account? <Link to={'/login'} className='account'>Sign In</Link></p>
     </article>
    </div>
   )
