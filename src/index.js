@@ -5,7 +5,7 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
 import Blog from './Pages/Blog';
-import Profile from './Pages/Profile';
+import Create from './Pages/Create';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const router = createBrowserRouter([
   {
@@ -29,8 +29,8 @@ const router = createBrowserRouter([
     element: <Blog />,
   },
   {
-    path: '/profile',
-    element: <Profile />,
+    path: '/create',
+    element: <Create />,
   },
   {
     path: '*',

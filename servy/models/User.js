@@ -12,6 +12,10 @@ const personSchema = new mongoose.Schema({
     },
     password:{
         type:String
+    },
+    blogs: {
+        type: Array,
+        default: []
     }
 }, {collection: "Users"})
 
