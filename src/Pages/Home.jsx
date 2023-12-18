@@ -1,6 +1,7 @@
 import {useEffect,useState} from 'react'
 import HomeBlog from '../Components/HomeBlog'
 import "../Styles/home.css"
+import Nav from '../Components/Nav'
 const Home = () => {
     const [blogs,setBlogs]=useState([])
     useEffect(()=>{
@@ -18,12 +19,12 @@ const Home = () => {
     },[])
   return (
     <>
+    <Nav></Nav>
     <div className='blogCon'>
     {blogs.map((x,i)=>{
         return <HomeBlog key={i} data={x} />
     })}
     </div>
-    
     </>
   )
 }

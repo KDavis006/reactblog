@@ -1,0 +1,28 @@
+body{
+    background-color:#191d42;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;;
+}
+html {
+    background-color: #191d42;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+nav{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    text-decoration:none;
+}
+nav >a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+}
+nav>a:hover{
+    color: #293eff;
+}
