@@ -73,9 +73,11 @@ const SignUp = () => {
       <div className='loginArea'>
        <input type="password" name="password" id="password" value={password} onChange={(e)=>setPassword(e.target.value)} className='input' placeholder='Password'/>
       </div>
+      
       <button className='submitButton' onClick={() => handleSubmit()}>Create Account</button>
+      <p className='gotIt'>Already have an account? <Link to={'/login'} className='account'>Sign In</Link></p>
      </form>
-     <p className='gotIt'>Already have an account? <Link to={'/login'} className='account'>Sign In</Link></p>
+     
     </article>
    </div>
   )

@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from 'react';
 import { Link } from "react-router-dom";
-
+import "../Styles/forms.css"
 const Login = () => {
  const [email, setEmail] = useState('')
  const [password, setPassword] = useState('')
@@ -48,8 +48,9 @@ const Login = () => {
        <input type="password" name="password" id="password" value={password} onChange={(e)=>setPassword(e.target.value)} className='input' placeholder='Password'/>
       </div>
       <button type='submit' className='submitButton'>Login</button>
-     </form>
      <p className='gotIt'>Don't have an account? <Link to={'/'} className='account'>Sign Up</Link></p>
+
+     </form>
     </article>
    </div>
   )
