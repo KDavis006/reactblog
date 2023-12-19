@@ -7,6 +7,7 @@ import SignUp from './Pages/SignUp';
 import Blog from './Pages/Blog';
 import Create from './Pages/Create';
 import Edit from './Pages/Edit';
+import Editing from './Pages/Editing';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: '/edit',
     element: <Edit />,
+  },
+  {
+    path: '/editing',
+    element: <Editing />
   },
   {
     path: '*',

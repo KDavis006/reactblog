@@ -1,4 +1,5 @@
 import {useState, useRef} from 'react'
+import Nav from '../Components/Nav'
 
 const Editing = () => {
  const data = useRef(JSON.parse(sessionStorage.getItem("editData")))
@@ -29,16 +30,16 @@ const Editing = () => {
       <article className="createSection">
         <form onSubmit={handleSubmit} className="createForm">
           <div className="createArea">
-            <input type="text" maxLength='100' name='title' value={data.current.title} onChange={(e) => setTitle(e.target.value)} placeholder='title'/>
+            <input type="text" maxLength='100' name='title' defaultValue={data.current.title} onChange={(e) => setTitle(e.target.value)}/>
           </div>
           <div className="createArea">
-            <input type="text" maxLength='250' name='description' value={data.current.description} onChange={(e) => setDescription(e.target.value)} placeholder='description'/>
+            <input type="text" maxLength='250' name='description' defaultValue={data.current.description} onChange={(e) => setDescription(e.target.value)}/>
           </div>
           <div className="createArea">
-            <input type="text" name='content' value={data.current.content} onChange={(e) => setContent(e.target.value)} placeholder='content'/>
+            <input type="text" name='content' defaultValue={data.current.content} onChange={(e) => setContent(e.target.value)}/>
           </div>
           <div className="createArea">
-            <input type="text" name='image' value={data.current.image} onChange={(e) => setImage(e.target.value)} placeholder='image url'/>
+            <input type="text" name='image' defaultValue={data.current.image} onChange={(e) => setImage(e.target.value)}/>
           </div>
           <button className="submitButton">Create Blog</button>
         </form>
