@@ -1,7 +1,9 @@
 import {useState, useEffect, useRef} from 'react';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import "../Styles/forms.css"
 const Login = () => {
+  const navigate = useNavigate()
  const [email, setEmail] = useState('')
  const [password, setPassword] = useState('')
  const [login, setLogin] = useState(sessionStorage.getItem('authenticated') || false)
@@ -33,7 +35,7 @@ const Login = () => {
 
  if(login === true){
   console.log('e')
-   window.location.href = '/home'
+   navigate('/home')
  }
 
  

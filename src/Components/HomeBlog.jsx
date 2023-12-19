@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const HomeBlog = ({data}) => {
+  const navigate = useNavigate()
   const clicky=(x)=>{
     sessionStorage.setItem("blogData",JSON.stringify(x))
-    window.location.href = "/blog"
+    navigate("/blog")
   }
   return (
     <>

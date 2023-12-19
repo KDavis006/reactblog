@@ -1,7 +1,9 @@
 import {useState, useRef} from 'react'
+import { useNavigate } from "react-router-dom";
 import Nav from '../Components/Nav'
 
 const Editing = () => {
+  const navigate = useNavigate()
  const data = useRef(JSON.parse(sessionStorage.getItem("editData")))
  const [title, setTitle] = useState(data.current.title)
  const [description, setDescription] = useState(data.current.description)
@@ -20,7 +22,7 @@ const Editing = () => {
  }
 
  if(good === true){
-   window.location.href = '/home'
+   navigate('/home');
  }
 
   return (

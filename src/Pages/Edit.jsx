@@ -1,7 +1,8 @@
 import {useState, useRef, useEffect} from 'react'
 import Nav from '../Components/Nav'
-
+import { useNavigate } from 'react-router-dom'
 const Edit = () => {
+  const navigate = useNavigate()
  const [blogs, setBlogs] = useState([])
  const person = useRef(JSON.parse(sessionStorage.getItem('currentUser')));
  let author = person.current[1]
@@ -19,7 +20,7 @@ const Edit = () => {
   sessionStorage.setItem("editData", JSON.stringify(x))
   let data = sessionStorage.getItem("editData")
   alert(data)
-  window.location.href = "/editing"
+     navigate('/editing');
  }
 
   return (
@@ -42,8 +43,9 @@ const Edit = () => {
        </div>
       )
      }
-     return true
-    })}
+    return true
+    })
+    }
    </>
   )
 }

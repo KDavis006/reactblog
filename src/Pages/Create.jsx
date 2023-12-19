@@ -1,7 +1,9 @@
 import {useState, useRef} from 'react'
 import Nav from '../Components/Nav'
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
+  const navigate = useNavigate()
   const person = useRef(JSON.parse(sessionStorage.getItem('currentUser')));
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
@@ -33,7 +35,7 @@ const Create = () => {
   }
 
   if(good === true){
-   window.location.href = '/home'
+   navigate('/home');
   }
 
 
