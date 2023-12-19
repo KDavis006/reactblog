@@ -12,7 +12,7 @@ const createBlogs = async (req, res) => {
     console.log('Creating');
     const {title, description, content, image, author} = req.body;
     let allBlogs = await Blog.find({});
-    let itemTwo = await Blog.create({title: title, description: description, content: content, image: image, author: author, id: allBlogs.length+1});
+    let itemTwo = await Blog.create({title: title, description: description, content: content, image: image, author: author, id: allBlogs.length++});
     res.json({success: true, data: itemTwo});
   } catch (err) {
     console.log(err);
@@ -20,29 +20,17 @@ const createBlogs = async (req, res) => {
 };
 
 const updateBlogs = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { name, age } = req.body;
-    let answer = await Blog.find({});
-    const answer2 = answer.find((Blog) => {
-      return Blog.BlogId === Number(id);
-    });
-    if (!answer2) {
-      return express.json({ success: false, data: [] });
-    }
-    if (age == -5) {
-      await Blog.findByIdAndUpdate({ _id: answer2._id }, { assigned: name });
-    } else {
-      await Blog.findByIdAndUpdate(
-        { _id: answer2._id },
-        { name: name, age: age }
-      );
-    }
-
-    res.status(202).json({ success: true });
-  } catch (err) {
-    console.log(err);
-  }
+	try {
+		const { id } = req.params;
+		const {title, image, description, content} = req.body;
+		let item = await Post.findOneAndUpdate({ id: id }, {title:title, image:image, description:description, content:content});
+		if (!item) {
+			return res.json({ success: false, data: [] });
+		}
+		res.json({ data: item, success: true });
+	} catch (err) {
+		console.log(err);
+	}
 };
 
 const deleteBlog = async (req, res) => {

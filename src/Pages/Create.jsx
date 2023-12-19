@@ -34,7 +34,7 @@ const Create = () => {
 
   if(good === true){
    window.location.href = '/home'
- }
+  }
 
 
   return (

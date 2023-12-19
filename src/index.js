@@ -6,6 +6,7 @@ import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
 import Blog from './Pages/Blog';
 import Create from './Pages/Create';
+import Edit from './Pages/Edit';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: '/create',
     element: <Create />,
+  },
+  {
+    path: '/edit',
+    element: <Edit />,
   },
   {
     path: '*',

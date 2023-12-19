@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const personSchema = new mongoose.Schema(
   {
-    blogId: {
+    id: {
       type: Number
     },
     image: {
