@@ -3,6 +3,7 @@ import Nav from '../Components/Nav'
 import { useNavigate } from 'react-router-dom'
 const Edit = () => {
   const navigate = useNavigate()
+  const empty = useRef(0)
  const [blogs, setBlogs] = useState([])
  const person = useRef(JSON.parse(sessionStorage.getItem('currentUser')));
  let author = person.current[1]
@@ -18,20 +19,17 @@ const Edit = () => {
 
  const clicky=(x)=>{
   sessionStorage.setItem("editData", JSON.stringify(x))
-  let data = sessionStorage.getItem("editData")
-  alert(data)
-     navigate('/editing');
+  navigate('/editing');
  }
-
   return (
    <>
    <Nav />
     {blogs.map((x,i)=>{
      if (x.author === author) {
+      empty.current=1
       return (
        <div className='blogHome' key={i}>
         <button blogdata={x} onClick={()=>{
-         alert('this runs');
          clicky(x)}}>
          <img src={x.image} alt="" />
          <div className='imgText'>
@@ -46,6 +44,7 @@ const Edit = () => {
     return true
     })
     }
+    {!empty.current&&<h1 style={{margin:"auto",textAlign:"center"}}>No Blogs To Edit</h1>}
    </>
   )
 }

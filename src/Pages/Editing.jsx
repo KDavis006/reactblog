@@ -32,18 +32,18 @@ const Editing = () => {
       <article className="createSection">
         <form onSubmit={handleSubmit} className="createForm">
           <div className="createArea">
-            <input type="text" maxLength='100' name='title' defaultValue={data.current.title} onChange={(e) => setTitle(e.target.value)}/>
+            <input type="text" maxLength='100' name='title' defaultValue={data.current.title} onChange={(e) => setTitle(e.target.value)} placeholder='title'/>
           </div>
           <div className="createArea">
-            <input type="text" maxLength='250' name='description' defaultValue={data.current.description} onChange={(e) => setDescription(e.target.value)}/>
+            <input type="text" maxLength='250' name='description' defaultValue={data.current.description} onChange={(e) => setDescription(e.target.value)} placeholder='description'/>
           </div>
           <div className="createArea">
-            <input type="text" name='content' defaultValue={data.current.content} onChange={(e) => setContent(e.target.value)}/>
+            <input type="text" name='content' defaultValue={data.current.content} onChange={(e) => setContent(e.target.value)} placeholder='content'/>
           </div>
           <div className="createArea">
-            <input type="text" name='image' defaultValue={data.current.image} onChange={(e) => setImage(e.target.value)}/>
+            <input type="text" name='image' defaultValue={data.current.image} onChange={(e) => setImage(e.target.value)} placeholder='image url'/>
           </div>
-          <button className="submitButton">Create Blog</button>
+          <button className="submitButton">Edit Blog</button>
         </form>
       </article>
      </div>
