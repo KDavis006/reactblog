@@ -23,7 +23,7 @@ const updateBlogs = async (req, res) => {
 	try {
 		const { id } = req.params;
 		const {title, image, description, content} = req.body;
-		let item = await Post.findOneAndUpdate({ id: id }, {title:title, image:image, description:description, content:content});
+		let item = await Blog.findOneAndUpdate({ id: id }, {title:title, image:image, description:description, content:content});
 		if (!item) {
 			return res.json({ success: false, data: [] });
 		}
